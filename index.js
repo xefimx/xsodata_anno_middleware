@@ -146,12 +146,14 @@ async function metadataMiddleware({
   const sBaseUrl = getOdataUrl(destination_name);
   process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 
-  return async (req, res) => {
+  return (req, res) => {
     const sPath =
       sBaseUrl + "/" + service_name + req.originalUrl.replace("/odata", "");
     if (sPath.indexOf("$metadata") > -1) {
       if (!metadata) {
-        await fillMetadata(sPath, property_annotations);
+        async(() => {
+          await fillMetadata(sPath, property_annotations);
+        })();
       }
       res.type("application/xml;charset=utf-8").send(metadata);
     } else {
