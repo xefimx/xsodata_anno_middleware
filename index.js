@@ -151,7 +151,7 @@ async function metadataMiddleware({
       sBaseUrl + "/" + service_name + req.originalUrl.replace("/odata", "");
     if (sPath.indexOf("$metadata") > -1) {
       if (!metadata) {
-        async(() => {
+        (async () => {
           await fillMetadata(sPath, property_annotations);
         })();
       }
