@@ -1,0 +1,20 @@
+{
+  "name": "xsodata_anno_middleware",
+  "version": "0.0.1",
+  "description": "Express JS middleware for setting up metadata annotation for xsodata based ODATA services",
+  "main": "index.js",
+  "dependencies": {
+    "request": "*",
+    "fast-xml-parser": "*",
+    "request-promise": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "xsodata",
+    "annotations"
+  ],
+  "author": "Efim Parshin",
+  "license": "ISC"
+}
