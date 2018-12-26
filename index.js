@@ -138,7 +138,7 @@ async function fillMetadata(sPath, property_annotations) {
   });
 }
 
-async function metadataMiddleware({
+function metadataMiddleware({
   service_name,
   destination_name,
   property_annotations
